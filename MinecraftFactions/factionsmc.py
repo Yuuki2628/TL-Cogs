@@ -54,7 +54,7 @@ class FactionsMC(commands.Cog):
         factionName = [i[0] for i in factions]
 
         for i in range(len(factionName)):
-            color = members[i][1]
+            color = factions[i][1]
             members = factions.pop[i][0]
             members = members.pop[1]
 
