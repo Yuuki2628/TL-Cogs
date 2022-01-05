@@ -1,6 +1,6 @@
 from redbot.core import Config
 from redbot.core import commands
-from urllib2 import urlopen
+import urllib.request
 import discord
 
 class FactionsMC(commands.Cog):
@@ -31,8 +31,9 @@ class FactionsMC(commands.Cog):
 
         #reads the data from the github page
         url = await self.config.guild(ctx.guild).url()
-        response = urlopen(url)
+        response = urllib.request.urlopen(url)
         data = response.read()
+        text = data.decode('utf-8')
         arr = [i.split(',') for i in text.split(';')]
 
         print(arr[0])
