@@ -48,7 +48,7 @@ class FactionsMC(commands.Cog):
         async for _ in fchannel.history(limit=None):
             count += 1
 
-        await fchannel.purge(count)
+        await fchannel.purge(limit=count)
 
         for i in range(factions.length):
             factionName = members[i][0]
