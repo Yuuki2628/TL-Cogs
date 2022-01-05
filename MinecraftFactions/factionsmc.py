@@ -11,7 +11,7 @@ class FactionsMC(commands.Cog):
             "factions": [],
             "fmembers": [[]],
             "fchannel": None,
-            "url": ""
+            "url": "https://raw.githubusercontent.com/Yuuki2628/TL-Cogs/main/MinecraftFactions/factions.txt"
         }
 
         self.config.register_guild(**default_guild)
@@ -30,7 +30,16 @@ class FactionsMC(commands.Cog):
         if fchannel is None:
             await ctx.send("Please setup a channel before using this command")
 
-        factions = await self.config.guild(ctx.guild).factions()
+        #reads the data from the github page
+        url = await self.config.guild(ctx.guild).url()
+        response = urlopen(url)
+        data = response.read()
+        arr = [i.split(',') for i in text.split(';')]
+
+        print(arr[0])
+        print(arr[1,2])
+
+        """factions = await self.config.guild(ctx.guild).factions()
         members = await self.config.guild(ctx.guild).fmembers()
 
         count = 0
@@ -50,6 +59,6 @@ class FactionsMC(commands.Cog):
             embed = discord.Embed(title=factionName,color=color)
             embed.add_field(title="Faction members:",value=membersField)
 
-            await fchannel.send(embed=embed)
+            await fchannel.send(embed=embed)"""
 
         return
