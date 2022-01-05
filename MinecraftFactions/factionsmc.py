@@ -50,7 +50,7 @@ class FactionsMC(commands.Cog):
         factionName = [i[0] for i in factions]
 
         for i in range(len(factionName)):
-            await ctx.send(faction[i])
+            await ctx.send(factions[i])
             emColor = factions[i][1]
             del factions[i][0]
             del factions[i][0]
