@@ -52,10 +52,10 @@ class FactionsMC(commands.Cog):
         for i in range(len(factionName)):
             color = factions[i][1]
             del factions[i][0]
-            del factions[1]
+            del factions[i][1]
 
             membersField = '\n'.join(factions[i])
-            embed = discord.Embed(title=factionName,color=int(color, base=16))
+            embed = discord.Embed(title=factionName[i],color=int(color, base=16))
             embed.add_field(name="Faction members:",value=membersField)
 
             await fchannel.send(embed=embed)
