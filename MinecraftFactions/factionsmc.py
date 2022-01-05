@@ -1,5 +1,6 @@
 from redbot.core import Config
 from redbot.core import commands
+from urllib2 import urlopen
 import discord
 
 class FactionsMC(commands.Cog):
@@ -68,4 +69,4 @@ class FactionsMC(commands.Cog):
         if ch == None:
             return await ctx.send("Set the channel where you want the factions to be shown")
         await self.config.guild(ctx.guild).fchannel.set(ch.id)
-        return await ctx.send(f"The faction channel has been set to {ch}!")
+        return await ctx.send(f"The faction channel has been set to {ch.mention}!")
