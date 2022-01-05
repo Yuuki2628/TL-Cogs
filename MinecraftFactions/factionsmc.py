@@ -41,8 +41,9 @@ class FactionsMC(commands.Cog):
         text = data.decode('utf-8')
         factions = [i.split(',') for i in text.split(';')]
 
-        await ctx.send(arr[0])
-        await ctx.send(arr[1][2])
+        await ctx.send("Debug stuff:")
+        await ctx.send(factions[0])
+        await ctx.send(factions[1][2])
 
         count = 0
         async for _ in fchannel.history(limit=None):
