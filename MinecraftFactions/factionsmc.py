@@ -39,7 +39,7 @@ class FactionsMC(commands.Cog):
         response = urllib.request.urlopen(url)
         data = response.read()
         text = data.decode('utf-8')
-        arr = [i.split(',') for i in text.split(';')]
+        factions = [i.split(',') for i in text.split(';')]
 
         await ctx.send(arr[0])
         await ctx.send(arr[1][2])
@@ -50,11 +50,11 @@ class FactionsMC(commands.Cog):
 
         await fchannel.purge(limit=count)
 
-        for i in range(factions.length):
-            factionName = members[i][0]
-            members = members.pop[0]
+        factionName = [i[0] for i in factions]
 
+        for i in range(factionName.length):
             color = members[i][1]
+            members = factions.pop[i][0]
             members = members.pop[1]
 
             membersField = members.join('\n')
