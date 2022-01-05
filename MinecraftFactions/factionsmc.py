@@ -61,11 +61,11 @@ class FactionsMC(commands.Cog):
 
         return
 
-        @factions.command(name="setchannel")
-        @commands.guild_only()
-        async def setc_hannel(self, ctx, ch: discord.TextChannel = None):
-            """Set the channel where you want the factions to be shown"""
-            if ch == None:
-                return await ctx.send("Set the channel where you want the factions to be shown")
-            await self.config.guild(ctx.guild).fchannel.set(ch.id)
-            return await ctx.send(f"The faction channel has been set to {ch}!")
+    @factions.command(name="setchannel")
+    @commands.guild_only()
+    async def setc_hannel(self, ctx, ch: discord.TextChannel = None):
+        """Set the channel where you want the factions to be shown"""
+        if ch == None:
+            return await ctx.send("Set the channel where you want the factions to be shown")
+        await self.config.guild(ctx.guild).fchannel.set(ch.id)
+        return await ctx.send(f"The faction channel has been set to {ch}!")
