@@ -56,6 +56,8 @@ class FactionsMC(commands.Cog):
             del factions[i][0]
 
             membersField = '\n'.join(factions[i])
+            if membersField == None or membersField == "":
+                membersField = "There are currently no members in this faction"
             embed = discord.Embed(title=factionName[i],color=int(emColor, base=16))
             embed.add_field(name="Faction members:",value=membersField)
 
