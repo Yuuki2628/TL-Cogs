@@ -25,9 +25,14 @@ class FactionsMC(commands.Cog):
     @commands.guild_only()
     async def update_channel(self, ctx):
         """Updates or displays the factions on the selected channel"""
-        fchannel = await self.config.guild(ctx.guild).fchannel()
-        if fchannel is None:
+        achannel = await self.config.guild(ctx.guild).fchannel()
+        if achannel is None:
             return await ctx.send("Please setup a channel before using this command")
+
+        for channel in ctx.guild.channels:
+            if channel.id == achannel:
+                fchannel = channel
+                break
 
         #reads the data from the github page
         url = await self.config.guild(ctx.guild).url()
@@ -66,5 +71,5 @@ class FactionsMC(commands.Cog):
         """Set the channel where you want the factions to be shown"""
         if ch == None:
             return await ctx.send("Set the channel where you want the factions to be shown")
-        await self.config.guild(ctx.guild).fchannel.set(ch)
+        await self.config.guild(ctx.guild).fchannel.set(ch.id)
         return await ctx.send(f"The faction channel has been set to {ch.mention}!")
