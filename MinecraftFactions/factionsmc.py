@@ -43,7 +43,7 @@ class FactionsMC(commands.Cog):
 
         await ctx.send("Debug stuff:")
         await ctx.send(factions[0])
-        await ctx.send(factions[1][2])
+        await ctx.send(factions[1])
 
         count = 0
         async for _ in fchannel.history(limit=None):
@@ -63,6 +63,7 @@ class FactionsMC(commands.Cog):
             embed.add_field(title="Faction members:",value=membersField)
 
             await fchannel.send(embed=embed)
+            break
 
         return
 
