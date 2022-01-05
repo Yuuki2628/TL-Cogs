@@ -41,10 +41,6 @@ class FactionsMC(commands.Cog):
         text = data.decode('utf-8')
         factions = [i.split(',') for i in text.split(';')]
 
-        await ctx.send("Debug stuff:")
-        await ctx.send(factions[0])
-        await ctx.send(factions[1])
-
         count = 0
         async for _ in fchannel.history(limit=None):
             count += 1
@@ -59,7 +55,7 @@ class FactionsMC(commands.Cog):
             del factions[1]
 
             membersField = '\n'.join(factions[i])
-            embed = discord.Embed(title=factionName,color=color)
+            embed = discord.Embed(title=factionName,color=int(color))
             embed.add_field(title="Faction members:",value=membersField)
 
             await fchannel.send(embed=embed)
