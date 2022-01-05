@@ -1,4 +1,4 @@
-from .joinleave import FactionsMC
+from .factionsmc import FactionsMC
 
 
 def setup(bot):
