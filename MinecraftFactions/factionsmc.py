@@ -39,9 +39,6 @@ class FactionsMC(commands.Cog):
         await ctx.send(arr[0])
         await ctx.send(arr[1][2])
 
-        """factions = await self.config.guild(ctx.guild).factions()
-        members = await self.config.guild(ctx.guild).fmembers()
-
         count = 0
         async for _ in fchannel.history(limit=None):
             count += 1
@@ -59,7 +56,7 @@ class FactionsMC(commands.Cog):
             embed = discord.Embed(title=factionName,color=color)
             embed.add_field(title="Faction members:",value=membersField)
 
-            await fchannel.send(embed=embed)"""
+            await fchannel.send(embed=embed)
 
         return
 
