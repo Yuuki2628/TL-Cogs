@@ -36,8 +36,8 @@ class FactionsMC(commands.Cog):
         text = data.decode('utf-8')
         arr = [i.split(',') for i in text.split(';')]
 
-        print(arr[0])
-        print(arr[1,2])
+        await ctx.send(arr[0])
+        await ctx.send(arr[1][2])
 
         """factions = await self.config.guild(ctx.guild).factions()
         members = await self.config.guild(ctx.guild).fmembers()
