@@ -58,12 +58,11 @@ class FactionsMC(commands.Cog):
             del factions[i][0]
             del factions[1]
 
-            membersField = '\n'.join(factions)
+            membersField = '\n'.join(factions[i])
             embed = discord.Embed(title=factionName,color=color)
             embed.add_field(title="Faction members:",value=membersField)
 
             await fchannel.send(embed=embed)
-            break
 
         return
 
