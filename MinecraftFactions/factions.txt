@@ -1,1 +1,1 @@
-End Rogues,0x5D3FD3,Yuuki,FyN8ay,Mr.UnLuCkY,Inf1nitius,Silent Killer;Faction2,0xFFFFFF;Faction3,0x000000
+End Rogues,0x5D3FD3,Yuuki,FyN8ay,Mr.UnLuCkY,Inf1nitius,Silent Killer;Alpha,0xFFFFFF;Omega,0x000000
