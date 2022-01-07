@@ -1,1 +1,1 @@
-Admin abuse,0xFF0000,Generaleoley;End Rogues,0x5D3FD3,Yuuki,FyN8ay,Mr.UnLuCkY,Inf1nitius,Silent Killer
+Admin Abuse,0xFF0000,Generaleoley;End Rogues,0x5D3FD3,Yuuki,FyN8ay,Mr.UnLuCkY,Inf1nitius,Silent Killer
